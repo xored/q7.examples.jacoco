@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.1"?>
+
+<product name="%productName" uid="org.eclipse.ui.examples.rcp.browser.product" application="org.eclipse.ui.examples.rcp.browser.app" useFeatures="true">
+
+   <aboutInfo>
+      <image path="icons/eclipse_lg.gif"/>
+      <text>
+         %aboutText
+      </text>
+   </aboutInfo>
+
+   <configIni use="default"/>
+
+   <launcherArgs>
+   </launcherArgs>
+
+   <windowImages small="icons/eclipse.gif" large="icons/eclipse32.gif"/>
+
+
+   <launcher name="browser">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <features>
+     <feature id="org.eclipse.ui.examples.rcp.browser" />
+   </features>
+
+   <configurations> 
+     <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" /> 
+   </configurations> 
+
+</product>

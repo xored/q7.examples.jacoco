@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xored.q7.scenario:WorkbenchContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.xored.q7.scenario="http://com/xored/q7/scenario.ecore" name="defaultWB" id="_7c9isMx7EeCsOcWBSgorcQ" perspectiveId="org.eclipse.ui.examples.rcp.browser.browserPerspective">
+  <views>org.eclipse.ui.examples.rcp.browser.browserView</views>
+</com.xored.q7.scenario:WorkbenchContext>

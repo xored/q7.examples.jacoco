@@ -1,0 +1,83 @@
+--- Q7 testcase ---
+Q7-vendor: www.xored.com/q7
+Format-Version: 1.0
+Element-Name: AboutBrowserExample
+Tags: skipExecution
+External-Reference: 
+Element-Version: 3.0
+Contexts: _7c9isMx7EeCsOcWBSgorcQ
+Save-Time: 11/30/11 4:14 PM
+Id: _6cniMMyKEeCKjp0mPLHiEg
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Entry-Name: .content
+Content-Type: text/ecl
+
+get-about-menu | click
+with [get-window "About Browser Example"] {
+    get-control Any -index 6 | get-property className | equals "org.eclipse.swt.widgets.Composite" | verify-true
+    with [get-button "Installation Details"] {
+        get-property enablement | equals true | verify-true
+        get-property caption | equals "&Installation Details" | verify-true
+    }
+    get-button OK | get-property enablement | equals true | verify-true
+}
+get-window "About Browser Example" | get-button "Installation Details" | click
+with [get-window "About Browser Example" | get-window "Browser Example Installation Details" | get-tab-folder] {
+    get-property pages -index 0 | equals "Plug-ins" | verify-true
+    get-property pages -index 1 | equals Configuration | verify-true
+    get-property tabCount | equals 2 | verify-true
+}
+with [get-window "About Browser Example"] {
+    get-window "Browser Example Installation Details" | get-button Close | click
+    get-button OK | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAAIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnR9kMFOwzAQRO/5Cmvv2AUkAlGciqJI
+oBIB6gFuVXAWY4jt1HaI+/e4iOaEuK1mZp9mt1xG3ZMvdF5Zw+GULoCgEbZTRnIYw9vJJSyrrBRW02gd
+dnSXUy/QtE7ZYvM7kKhVMUPODpCENb5IOof3EIaCsWmaqNWSWifZS3N3jPxJnpeSy35ctsvZ0aUokgTE
+tBo5XL/aMaycnTy6OrZ66JM1lzk/lFEdh+2FMKpp9usab9Yfw0I/3t+qWgIJrfQc/Kca6ohiDGktifsh
+oVH0UGWEpPNNwBh8tc3FlfJNzBPFP4jn1UZaJ55KNieyw/zfs6rsG1BLBwimO3dK8gAAAHUBAABQSwEC
+FAAUAAgACAAAACEApjt3SvIAAAB1AQAACAAAAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEA
+AQA2AAAAKAEAAAAA
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_.content.raw-c2dfba28-ebef-3afe-bd39-76376d333cc9
+Content-Type: q7/binary
+Entry-Name: .content.raw
+
+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
+------=_.content.raw-c2dfba28-ebef-3afe-bd39-76376d333cc9--

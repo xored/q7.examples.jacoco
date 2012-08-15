@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xored.q7.scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.xored.q7.scenario="http://com/xored/q7/scenario.ecore" xmlns:com.xored.tesla.core.protocol="http:///com/xored/tesla/core/protocol.ecore" xmlns:com.xored.tesla.core.protocol.raw="http:///com/xored/tesla/core/protocol/raw.ecore" xmlns:com.xored.tesla.core.ui="http:///com/xored/tesla/core/ui.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="DisabledButtonsIfTabClosed" version="3.0" id="_q1YVUMyPEeCKjp0mPLHiEg" type="ecl">
+  <contexts>_7c9isMx7EeCsOcWBSgorcQ</contexts>
+  <content xsi:type="org.eclipse.ecl.core:Script">
+    <content><![CDATA[get-view "Eclipse - The Eclipse Foundation open source community website." | close
+with [get-button -index 0] {
+    get-property enablement | equals false | verify-true
+    get-property caption | equals Back | verify-true
+}
+with [get-button -index 1] {
+    get-property enablement | equals false | verify-true
+    get-property caption | equals Forward | verify-true
+}
+with [get-button -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property caption | equals Stop | verify-true
+}
+with [get-button -index 3] {
+    get-property enablement | equals false | verify-true
+    get-property caption | equals Refresh | verify-true
+}
+get-menu "File/New Tab" | click
+with [get-button -index 0] {
+    get-property enablement | equals true | verify-true
+    get-property caption | equals Back | verify-true
+}
+with [get-button -index 1] {
+    get-property enablement | equals true | verify-true
+    get-property caption | equals Forward | verify-true
+}
+with [get-button -index 2] {
+    get-property enablement | equals true | verify-true
+    get-property caption | equals Stop | verify-true
+}
+with [get-button -index 3] {
+    get-property enablement | equals true | verify-true
+    get-property caption | equals Refresh | verify-true
+}]]></content>
+  </content>
+  <teslaContent xsi:type="com.xored.tesla.core.protocol.raw:TeslaScenario">
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="View" pattern="Eclipse - The Eclipse Foundation open source community website." multiplicity="1">
+        <parent id="EclipseWindow30" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Close">
+      <element id="View18" kind="View"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="0" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button11" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="1" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button10" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="2" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button12" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="0" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button11" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Back">
+      <element id="Button11" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="1" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button10" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Forward">
+      <element id="Button10" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="2" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button12" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Stop">
+      <element id="Button12" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="3" multiplicity="1">
+        <parent id="EclipseWindow31" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="false">
+      <element id="Button13" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Refresh">
+      <element id="Button13" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Menu" multiplicity="1">
+        <path>File</path>
+        <path>New Tab</path>
+        <parent id="EclipseWindow32" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:GetState"/>
+    <commands xsi:type="com.xored.tesla.core.protocol:Click">
+      <element id="Menu5" kind="Menu"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:WaitForState">
+      <state id="State10" kind="State"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="0" multiplicity="1">
+        <parent id="EclipseWindow33" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="true">
+      <element id="Button14" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Back">
+      <element id="Button14" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="1" multiplicity="1">
+        <parent id="EclipseWindow33" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="true">
+      <element id="Button16" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Forward">
+      <element id="Button16" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="2" multiplicity="1">
+        <parent id="EclipseWindow33" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="true">
+      <element id="Button17" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Stop">
+      <element id="Button17" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Button" index="3" multiplicity="1">
+        <parent id="EclipseWindow33" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="enablement" value="true">
+      <element id="Button18" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="caption" value="Refresh">
+      <element id="Button18" kind="Button"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <elementMapping command="//@teslaContent/@commands.0">
+      <elements id="EclipseWindow30" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.1">
+      <elements id="View18" kind="View"/>
+      <controls xsi:type="com.xored.tesla.core.ui:View" className="org.eclipse.swt.widgets.Composite" enablement="true" title="Eclipse - The Eclipse Foundation open source community website.">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="3" y="26" width="770" height="339"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.3">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.4">
+      <elements id="Button11" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Back</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.6">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.7">
+      <elements id="Button10" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool" index="1">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Forward</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.9">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.10">
+      <elements id="Button12" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool" index="2">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Stop</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.12">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.13">
+      <elements id="Button11" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Back</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.16">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.17">
+      <elements id="Button10" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool" index="1">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Forward</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.20">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.21">
+      <elements id="Button12" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool" index="2">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Stop</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.24">
+      <elements id="EclipseWindow31" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.25">
+      <elements id="Button13" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" kind="Tool" index="3">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Refresh</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.28">
+      <elements id="EclipseWindow32" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.29">
+      <elements id="Menu5" kind="Menu"/>
+      <controls xsi:type="com.xored.tesla.core.ui:MenuItem" caption="New &amp;Tab" enablement="true" index="1" cascade="true"/>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.30">
+      <elements id="State10" kind="State"/>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.33">
+      <elements id="EclipseWindow33" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.34">
+      <elements id="Button14" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" enablement="true" kind="Tool">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Back</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.37">
+      <elements id="EclipseWindow33" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.38">
+      <elements id="Button16" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" enablement="true" kind="Tool" index="1">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Forward</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.41">
+      <elements id="EclipseWindow33" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.42">
+      <elements id="Button17" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" enablement="true" kind="Tool" index="2">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Stop</caption>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.45">
+      <elements id="EclipseWindow33" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="100" y="218" width="800" height="482"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.46">
+      <elements id="Button18" kind="Button"/>
+      <controls xsi:type="com.xored.tesla.core.ui:ToolItem" enablement="true" kind="Tool" index="3">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <caption>Refresh</caption>
+      </controls>
+    </elementMapping>
+  </teslaContent>
+</com.xored.q7.scenario:Scenario>

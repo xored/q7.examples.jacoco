@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xored.q7.scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.xored.q7.scenario="http://com/xored/q7/scenario.ecore" xmlns:com.xored.tesla.core.protocol="http:///com/xored/tesla/core/protocol.ecore" xmlns:com.xored.tesla.core.protocol.raw="http:///com/xored/tesla/core/protocol/raw.ecore" xmlns:com.xored.tesla.core.ui="http:///com/xored/tesla/core/ui.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="OpenNewWindow" version="3.0" id="_ajvT0MyEEeCKjp0mPLHiEg" type="ecl">
+  <contexts>_7c9isMx7EeCsOcWBSgorcQ</contexts>
+  <contexts>__yf_kMx7EeCsOcWBSgorcQ</contexts>
+  <content xsi:type="org.eclipse.ecl.core:Script">
+    <content><![CDATA[get-menu "File/New Window" | click
+get-view "Eclipse - The Eclipse Foundation open source community website." | get-control Browser 
+    | get-property className | equals "org.eclipse.swt.browser.Browser" | verify-true
+get-view "Eclipse - The Eclipse Foundation open source community website." | get-control Any -index 0 
+    | get-property className | equals "org.eclipse.swt.widgets.Composite" | verify-true
+get-eclipse-window | close]]></content>
+  </content>
+  <teslaContent xsi:type="com.xored.tesla.core.protocol.raw:TeslaScenario">
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" index="1" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Close">
+      <element id="EclipseWindow3" kind="EclipseWindow" description="Browser Example"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Menu" multiplicity="1">
+        <path>File</path>
+        <path>New Window</path>
+        <parent id="EclipseWindow4" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:GetState"/>
+    <commands xsi:type="com.xored.tesla.core.protocol:Click">
+      <element id="Menu0" kind="Menu"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:WaitForState">
+      <state id="State0" kind="State"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" index="1" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="View" pattern="Eclipse - The Eclipse Foundation open source community website." multiplicity="1">
+        <parent id="EclipseWindow5" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Browser" multiplicity="1">
+        <parent id="View3" kind="View"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="className" value="org.eclipse.swt.browser.Browser">
+      <element id="Browser2" kind="Browser"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="View" pattern="Eclipse - The Eclipse Foundation open source community website." multiplicity="1">
+        <parent id="EclipseWindow6" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Any" index="0" multiplicity="1">
+        <parent id="View4" kind="View"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="className" value="org.eclipse.swt.widgets.Composite">
+      <element id="Any2" kind="Any"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Close">
+      <element id="EclipseWindow0_11" kind="EclipseWindow"/>
+    </commands>
+    <elementMapping command="//@teslaContent/@commands.0">
+      <elements id="EclipseWindow3" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="50" y="50" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.2">
+      <elements id="EclipseWindow4" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="649" y="309" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.3">
+      <elements id="Menu0" kind="Menu"/>
+      <controls xsi:type="com.xored.tesla.core.ui:MenuItem" caption="&amp;New Window" enablement="true" cascade="true"/>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.4">
+      <elements id="State0" kind="State"/>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.7">
+      <elements id="EclipseWindow5" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="50" y="50" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.8">
+      <elements id="View3" kind="View"/>
+      <controls xsi:type="com.xored.tesla.core.ui:View" className="org.eclipse.swt.widgets.Composite" enablement="true" title="Eclipse - The Eclipse Foundation open source community website.">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="3" y="26" width="770" height="457"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.9">
+      <elements id="Browser2" kind="Browser"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Browser" className="org.eclipse.swt.browser.Browser" enablement="true" uri="http://eclipse.org/">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="5" y="31" width="760" height="421"/>
+        <text><![CDATA[<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Eclipse - The Eclipse Foundation open source community website.</TITLE>\n<META name=author content="Eclipse Foundation, Inc.">\n<META name=keywords content="eclipse,project,plug-ins,plugins,java,ide,swt,refactoring,free java ide,tools,platform,open source,development environment,development,ide">\n<META content=text/html;charset=utf-8 http-equiv=Content-Type><LINK rel=stylesheet type=text/css href="/eclipse.org-common/yui/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/yui/2.6.0/build/menu/assets/skins/sam/menu.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/reset.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/layout.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/header.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/footer.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/visual.css" media=screen><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/print.css" media=print><LINK rel=stylesheet type=text/css href="/eclipse.org-common/themes/Nova/css/ie_style.css" media=screen><!-- Dependencies --><!-- Source File --><LINK rel=stylesheet type=text/css href="/home/content/nova.css"><LINK title="Eclipse RSS Feed" rel=alternate type=application/rss+xml href="http://feeds.feedburner.com/eclipse/fnews"></HEAD>\n<BODY>\n<DIV id=novaWrapper>\n<DIV id=clearHeader>\n<DIV id=logo>\n<DIV id=promotion><A href="/"><IMG alt=Eclipse.org src="/eclipse.org-common/themes/Nova/images/eclipse.png"> </A></DIV></DIV>\n<DIV id=otherSites>\n<DIV id=sites>\n<UL id=sitesUL>\n<LI><A href="http://marketplace.eclipse.org"><IMG alt="Eclipse Marketplace" src="http://dev.eclipse.org/custom_icons/marketplace.png">&nbsp;\n<DIV>Eclipse Marketplace</DIV></A></LI>\n<LI><A href="http://live.eclipse.org"><IMG alt="Eclipse Live" src="http://dev.eclipse.org/custom_icons/audio-input-microphone-bw.png">&nbsp;\n<DIV>Eclipse Live</DIV></A></LI>\n<LI><A href="https://bugs.eclipse.org/bugs/"><IMG alt=Bugzilla src="http://dev.eclipse.org/custom_icons/system-search-bw.png">&nbsp;\n<DIV>Bugzilla</DIV></A></LI>\n<LI><A href="http://www.eclipse.org/forums/"><IMG alt=Forums src="http://dev.eclipse.org/large_icons/apps/internet-group-chat.png">&nbsp;\n<DIV>Eclipse Forums</DIV></A></LI>\n<LI><A href="http://www.planeteclipse.org/"><IMG alt="Planet Eclipse" src="http://dev.eclipse.org/large_icons/devices/audio-card.png">&nbsp;\n<DIV>Planet Eclipse</DIV></A></LI>\n<LI><A href="http://wiki.eclipse.org/"><IMG alt="Eclipse Wiki" src="http://dev.eclipse.org/custom_icons/accessories-text-editor-bw.png">&nbsp;\n<DIV>Eclipse Wiki</DIV></A></LI>\n<LI><A href="http://portal.eclipse.org"><IMG alt="MyFoundation Portal" src="http://dev.eclipse.org/custom_icons/preferences-system-network-proxy-bw.png">\n<DIV>My Foundation Portal</DIV></A></LI></UL></DIV></DIV></DIV>\n<DIV id=header>\n<DIV id=menu>\n<UL>\n<LI><A href="http://www.eclipse.org/" target=_self>Home</A> </LI>\n<LI><A href="http://www.eclipse.org/downloads/" target=_self>Downloads</A> </LI>\n<LI><A href="http://www.eclipse.org/users/" target=_self>Users</A> </LI>\n<LI><A href="http://www.eclipse.org/membership/" target=_self>Members</A> </LI>\n<LI><A href="http://www.eclipse.org/committers/" target=_self>Committers</A> </LI>\n<LI><A href="http://www.eclipse.org/resources/" target=_self>Resources</A> </LI>\n<LI><A href="http://www.eclipse.org/projects/" target=_self>Projects</A> </LI>\n<LI><A href="http://www.eclipse.org/org/" target=_self>About Us</A> </LI></UL></DIV>\n<DIV id=search>\n<FORM id=searchbox_017941334893793413703:sqfrdtd112s action=http://www.google.com/cse><INPUT value=017941334893793413703:sqfrdtd112s type=hidden name=cx> <INPUT style="BORDER-BOTTOM: #7e9db9 1px solid; BORDER-LEFT: #7e9db9 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif) #ffffff no-repeat left 50%; BORDER-TOP: #7e9db9 1px solid; BORDER-RIGHT: #7e9db9 1px solid; PADDING-TOP: 2px" id=searchBox size=25 name=q> <INPUT id=searchButton value=Search type=submit name=sa> </FORM>\n<SCRIPT type=text/javascript src="http://www.google-analytics.com/ga.js" async="true"></SCRIPT>\n\n<SCRIPT type=text/javascript src="http://www.google.com/coop/cse/brand?form=searchbox_017941334893793413703%3Asqfrdtd112s&amp;lang=en"></SCRIPT>\n</DIV></DIV>\n<DIV id=novaContent>\n<DIV id=blockBuster>\n<DIV id=bbContent>\n<DIV class=newcomer><A href="/home/newcomers.php"><IMG src="http://dev.eclipse.org/large_icons/actions/bookmark-new.png"></A><BR><A href="/home/newcomers.php">New to Eclipse?</A></DIV>\n<UL class=noImage>\n<LI><A href="/home/categories/index.php?category=enterprise"><IMG alt="Enterprise Java" src="http://dev.eclipse.org/large_icons/places/network-server.png"></A><BR><A href="/home/categories/index.php?category=enterprise">Enterprise<BR>Java</A> </LI>\n<LI><A href="/eclipsert/"><IMG alt="Eclipse RT" src="/users/images/eclipsert.png" width=32></A><BR><A href="/eclipsert/">Eclipse RT</A> <!--<li><a href="/eclipsesoa"><img width="32" src="/home/images/soa.png" alt="Eclipse SOA"/></a><br/><a href="/eclipsesoa">Eclipse SOA</a></li> --><!--<li><a href="/pulsar/"><img width="32" src="/home/images/pulsar.png" alt="Pulsar"/></a><br/><a href="/pulsar/">Pulsar</a></li> --></LI>\n<LI><A href="/home/categories/index.php?category=modeling"><IMG alt=Modeling src="http://www.eclipse.org/home/categories/images_new/modeling.png" width=32></A><BR><A href="/home/categories/index.php?category=modeling">Modeling</A> <!-- <li><a href="/home/categories/index.php?category=web"><img src="http://dev.eclipse.org/large_icons/apps/internet-web-browser.png" alt=""/></a><br/><a href="/home/categories/index.php?category=web">Web<br/>Development</a></li>\n				<li><a href="/home/categories/index.php?category=soa"><img src="http://dev.eclipse.org/large_icons/apps/utilities-system-monitor.png" alt=""/></a><br/><a href="/home/categories/index.php?category=soa">SOA</a></li> --></LI>\n<LI><A href="/home/categories/index.php?category=frameworks"><IMG alt="Application Frameworks" src="http://dev.eclipse.org/large_icons/categories/applications-system.png"></A><BR><A href="/home/categories/index.php?category=frameworks">Application<BR>Frameworks</A> </LI>\n<LI><A href="/home/categories/index.php?category=ide"><IMG alt="Language IDEs" src="http://dev.eclipse.org/large_icons/apps/preferences-system-session.png"></A><BR><A href="/home/categories/index.php?category=ide">Language<BR>IDEs</A> </LI></UL></DIV>\n<DIV id=bbNav>\n<DIV id=buttonHolder><A id=downloadButton href="/downloads/"><IMG alt="Download Eclipse" src="/home/images/download.png"></A> </DIV>\n<DIV style="MARGIN-TOP: 34px; FLOAT: right"><IFRAME style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 90px; HEIGHT: 22px; OVERFLOW: hidden; BORDER-TOP: medium none; BORDER-RIGHT: medium none" src="http://www.facebook.com/plugins/like.php?href=http://www.facebook.com/pages/Eclipse/259655700571&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like" frameBorder=0 scrolling=no></IFRAME></DIV>\n<UL class=noImage>\n<LI><A href="http://marketplace.eclipse.org"><IMG alt=Plugins src="/home/images/bullet.png">Plugins</A> </LI>\n<LI><A href="/contribute/"><IMG alt=Contribute src="/home/images/bullet.png">Contribute</A> </LI>\n<LI class=bottom><A href="/documentation/"><IMG alt=Documentation src="/home/images/bullet.png">Documentation</A> </LI>\n<LI class=bottom><A href="https://bugs.eclipse.org/bugs/"><IMG alt="Eclipse Bugzilla" src="/home/images/bullet.png">Report a Bug</A> </LI></UL></DIV></DIV>\n<DIV id=fullcolumn>\n<DIV id=midcolumn>\n<H3><A class=rss href="http://feeds.feedburner.com/eclipse/fnews"><IMG alt="RSS Feed" align=right src="/images/rss2.gif"></A><A href="/community/news/eclipsenews.php">Announcements</A></H3>\n<TABLE class=newsPosts cellSpacing=0 cellPadding=0>\n<TBODY>\n<TR>\n<TD class=date>2011/08/11</TD>\n<TD><A class=link href="http://www.eclipse.org/org/press-release/20110811_EclipseTestingDay.php">Eclipse Testing Day</A><BR>\n<DIV class=details>Registration is open for Eclipse Testing Day, 7 September in Neuss, Germany. This day-long event features eight talks from experts in testing processes, tools, and technology, as well as opportunities to see the latest offerings from Testing Day sponsors.</DIV></TD></TR>\n<TR>\n<TD class=date>2011/08/07</TD>\n<TD><A class=link href="http://www.eclipsecon.org/europe2011/content/submissions-are-open">Last Days for EclipseCon Europe Submissions</A><BR>\n<DIV class=details>August 17 is the last day to submit talks for EclipseCon Europe and the Java 7 Summit. See the <A href="http://www.eclipsecon.org/europe2011/content/submissions-are-open">website</A> for this year's themes and information on submitting.</DIV></TD></TR>\n<TR>\n<TD class=date>2011/07/31</TD>\n<TD><A class=link href="http://www.eclipsecon.org/europe2011/content/submissions-are-open">EclipseCon Europe: Early-Bird Deadline in Two Days</A><BR>\n<DIV class=details>If you'd like ECE your talk accepted early, submit by this Wednesday, August 3. Five talks will be selected and announced on August 10. The deadline for all submissions is August 17.</DIV></TD></TR>\n<TR>\n<TD class=date>2011/07/21</TD>\n<TD><A class=link href="http://eclipse.org/org/press-release/20110721_java7summit.php">New Java 7 Summit To Be Held at EclipseCon Europe</A><BR>\n<DIV class=details>The Eclipse Foundation, in collaboration with Oracle, is pleased to announce the Java 7 Summit, to be held at the upcoming <A href="http://www.eclipsecon.org/europe2011/">EclipseCon Europe</A> in Ludwigsburg, Germany on November 2-4, 2011. </DIV></TD></TR>\n<TR>\n<TD class=date>2011/07/20</TD>\n<TD><A class=link href="http://www.eclipse.org/org/press-release/20110720_autoiwg.php">New Open Source Initiative for Automotive Software Development Tools</A><BR>\n<DIV class=details>The Eclipse Foundation is pleased to announce the creation of a new open source initiative to define and implement a standard platform for the software development tools used in the automotive industry. <A href="http://www.eclipse.org/org/press-release/20110720_autoiwg-german.php">[German]...</DIV></A></TD></TR>\n<TR>\n<TD class=feedMore colSpan=2><A href="/community/news/eclipsenews.php">More...</A></TD></TR></TBODY></TABLE>\n<H3><A class=rss href="/home/eclipseinthenews.rss"><IMG alt="RSS Feed" align=right src="/images/rss2.gif"></A><A href="/community/news/eclipseinthenews.php">Community News</A></H3>\n<TABLE class=newsPosts cellSpacing=0 cellPadding=0>\n<TBODY>\n<TR>\n<TD class=date vAlign=top>2011/08/10</TD>\n<TD><A class=link href="http://www.theserverside.com/news/thread.tss?thread_id=62697" target=_blank>Announcing Chronon "DVR for Java"</A> <BR>\n<DIV class=details>Chronon Systems has announced a preview of Chronon Recording Server.The Chronon Server records the internal state of your application while it's being executed and saves it to a 'recording' file. The recording can then be used to play back the entire execution of the Java program on any machine...</DIV></TD></TR>\n<TR>\n<TD class=date vAlign=top>2011/08/10</TD>\n<TD><A class=link href="http://tasktop.com/about/press/new-tasktop-sync-unifies-heterogeneous-alm-stacks-ease-large-scale-agile-deployments" target=_blank>New Tasktop Sync Unifies Heterogeneous ALM Stacks to Ease Large-Scale Agile Deployments</A> <BR>\n<DIV class=details>Tasktop Technologies, creators of Eclipse Mylyn and the leader in Agile Application Lifecycle Management (ALM) developer tools and interoperability, today announced Tasktop Sync, a new product that allows IT organizations to synchronize existing ALM servers from multiple vendors and open source pro...</DIV></TD></TR>\n<TR>\n<TD class=date vAlign=top>2011/08/10</TD>\n<TD><A class=link href="http://tasktop.com/about/press/tasktop-releases-tasktop-dev-21-enhanced-agile-planning-and-hp-alm-support" target=_blank>Tasktop Releases Tasktop Dev 2.1 with Enhanced Agile Planning and HP ALM Support</A> <BR>\n<DIV class=details>Tasktop Technologies, creators of the Eclipse Mylyn open source tools and a leader in Agile Application Lifecycle Management (ALM) developer tools and interoperability, today announced Tasktop Dev 2.1, the latest version of its award-winning developer tools. Tasktop Dev 2.1 builds on the recently re...</DIV></TD></TR>\n<TR>\n<TD class=date vAlign=top>2011/07/27</TD>\n<TD><A class=link href="http://www.froglogic.com/news/index.php?id=squish-4.1-release.html" target=_blank>froglogic Releases GUI Testing Tool Squish 4.1</A> <BR>\n<DIV class=details>Squish is the leading functional, cross-platform GUI and regression testing tool that can test applications based on a variety of GUI technologies, including Nokia's Qt Software Development Frameworks, Java SWT/Eclipse RCP, Java AWT/Swing, Windows MFC and .NET, Mac OS X Carbon/Cocoa, iOS CocoaTouch ...</DIV></TD></TR>\n<TR>\n<TD class=date vAlign=top>2011/07/26</TD>\n<TD><A class=link href="http://www.prweb.com/releases/2011/7/prweb8663979.htm" target=_blank>MyEclipse Joins the Rebellion: Announcing ZeroTurnaround’s “JRebel for MyEclipse”</A> <BR>\n<DIV class=details>ZeroTurnaround, winner of the 2011 “Most Innovative Java Technology” JAX Innovation Award for JRebel, and Genuitec, a founding member of the Eclipse Foundation, are proud to announce the release of “JRebel for MyEclipse.” JRebel (formerly JavaRebel) is a specialized plug-in that enabl...</DIV></TD></TR>\n<TR>\n<TD class=feedMore colSpan=2><A href="/community/news/eclipseinthenews.php">More...</A></TD></TR></TBODY></TABLE>\n<DIV style="TEXT-ALIGN: center; WIDTH: 100%">\n<SCRIPT type=text/javascript><!--\n				google_ad_client = "pub-6797025590085056";\n				/* 728x90, created 4/17/09 */\n				google_ad_slot = "9174493316";\n				google_ad_width = 468;\n				google_ad_height = 60;\n				//-->\n				</SCRIPT>\n\n<SCRIPT type=text/javascript src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></SCRIPT>\n\n<SCRIPT src="http://pagead2.googlesyndication.com/pagead/js/r20110810/r20110719/show_ads_impl.js"></SCRIPT>\n\n<SCRIPT src="http://googleads.g.doubleclick.net/pagead/test_domain.js"></SCRIPT>\n\n<SCRIPT src="http://pagead2.googlesyndication.com/pagead/render_ads.js"></SCRIPT>\n\n<SCRIPT>google_protectAndRun("render_ads.js::google_render_ad", google_handleError, google_render_ad);</SCRIPT>\n<IFRAME id=google_ads_frame1 height=60 marginHeight=0 src="http://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-6797025590085056&amp;output=html&amp;h=60&amp;slotname=9174493316&amp;w=468&amp;lmt=1313996729&amp;ea=0&amp;flash=0&amp;url=http%3A%2F%2Feclipse.org%2F&amp;dt=1313996636214&amp;shv=r20110810&amp;jsv=r20110719&amp;saldr=1&amp;correlator=1313996636219&amp;frm=4&amp;adk=3534316663&amp;ga_vid=1137831525.1313992518&amp;ga_sid=1313995732&amp;ga_hid=659890631&amp;ga_fc=1&amp;u_tz=420&amp;u_his=0&amp;u_java=1&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1080&amp;u_aw=1858&amp;u_cd=32&amp;u_nplug=0&amp;u_nmime=0&amp;dff=arial&amp;dfs=12&amp;biw=743&amp;bih=404&amp;fu=0&amp;ifi=1&amp;dtd=11" frameBorder=0 width=468 allowTransparency name=google_ads_frame1 marginWidth=0 scrolling=no></IFRAME></DIV></DIV>\n<DIV id=rightcolumn>\n<DIV class=sideitem>\n<DIV class="modal noBG">\n<DIV>\n<DIV style="TEXT-ALIGN: center"><A href="/membership/showMember.php?member_id=655" rel=nofollow><IMG style="PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px" title=CA alt=CA src="/membership/scripts/get_image.php?size=small&amp;id=655" width=120 height=68></A></DIV></DIV></DIV></DIV>\n<DIV class=sideitem>\n<H6><A class=rss href="http://feeds.feedburner.com/EclipseMarketplace"><IMG alt="RSS Feed" align=right src="/images/rss2.gif"></A><A href="http://marketplace.eclipse.org">Eclipse Marketplace</A></H6>\n<DIV class="modal epicFeed">\n<UL>\n<LI class=new><A class=link href="http://marketplace.eclipse.org/node/62482">Pkg-config support for Eclipse CDT - 0.5.2</A><BR><SPAN class=posted>2011/08/21</SPAN> \n<LI class=new><A class=link href="http://marketplace.eclipse.org/node/1231">Advanced Methods Search - 2.2</A><BR><SPAN class=posted>2011/08/21</SPAN> \n<LI class=new><A class=link href="http://marketplace.eclipse.org/node/99539">Annotations Ruler Background - </A><BR><SPAN class=posted>2011/08/20</SPAN> \n<LI class=new><A class=link href="http://marketplace.eclipse.org/node/107042">WolfDBManager2 RCP - 0.7</A><BR><SPAN class=posted>2011/08/19</SPAN> \n<LI class=new><A class=link href="http://marketplace.eclipse.org/node/30823">PhoneGap for Android with JSLint/JSHint - 1.2</A><BR><SPAN class=posted>2011/08/19</SPAN> </LI></UL></DIV></DIV>\n<DIV class=more>\n<DIV class=moreButton><A href="http://marketplace.eclipse.org">View All Plugins</A> </DIV></DIV>\n<DIV class=sideitem>\n<H6><A class=rss href="http://feeds.feedburner.com/eclipselive"><IMG alt="RSS Feed" align=right src="/images/rss2.gif"></A><A href="http://live.eclipse.org">Eclipse Live</A></H6>\n<DIV class="modal liveFeed">\n<UL>\n<LI class=new><A class=link href="http://live.eclipse.org/node/1042">Manage Jenkins and DEV@cloud Jobs through the Eclipse IDE</A><BR><SPAN class=posted>2011/08/17</SPAN> \n<LI class=new><A class=link href="http://live.eclipse.org/node/1041">CloudBees Toolkit for Eclipse</A><BR><SPAN class=posted>2011/08/17</SPAN> \n<LI class=new><A class=link href="http://live.eclipse.org/node/1040">Java 7 support in Eclipse Java development tools</A><BR><SPAN class=posted>2011/08/03</SPAN> \n<LI class=new><A class=link href="http://live.eclipse.org/node/1044">Reminder - Java 7 support in Eclipse Java development tools</A><BR><SPAN class=posted>2011/08/01</SPAN> \n<LI class=new><A class=link href="http://live.eclipse.org/node/1033">What Is New in Xtext 2.0</A><BR><SPAN class=posted>2011/07/14</SPAN> </LI></UL></DIV></DIV>\n<DIV class=more>\n<DIV class=moreButton><A href="http://live.eclipse.org/">More from Live</A> </DIV></DIV>\n<DIV class=sideitem>\n<H6><A href="http://eclipselabs.org">Eclipse Labs</A> <SPAN class=labsActive>(Most Active)</SPAN></H6>\n<DIV class="modal epicFeed">\n<UL>\n<LI class=new><A class=link href="http://code.google.com/a/eclipselabs.org/p/code-recommenders">code-recommenders</A> <BR>\n<LI class=new><A class=link href="http://code.google.com/a/eclipselabs.org/p/mercurialeclipse">mercurialeclipse</A> <BR>\n<LI class=new><A class=link href="http://code.google.com/a/eclipselabs.org/p/ostool">ostool</A> <BR>\n<LI class=new><A class=link href="http://code.google.com/a/eclipselabs.org/p/anyedittools">anyedittools</A> <BR>\n<LI class=new><A class=link href="http://code.google.com/a/eclipselabs.org/p/jvmmonitor">jvmmonitor</A> <BR></LI></UL></DIV></DIV><!--			<div id="promos">	--><!--				<a href="/community/training/classes.php"><img border="0" src="/community/training/traininggraphic_125x125.jpg"  height="125" width="125" alt="Eclipse Training"/></a>	--><!--			</div>	--><BR><BR>\n<DIV style="TEXT-ALIGN: right; WIDTH: 100%"><A href="/community/news/rssfeeds.php">Eclipse RSS Feeds</A> </DIV></DIV></DIV>\n<SCRIPT type=text/javascript>\n\n		  var _gaq = _gaq || [];\n		  _gaq.push(['_setAccount', 'UA-910670-2']);\n		  _gaq.push(['_trackPageview']);\n		\n		  (function() {\n		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n		  })();\n		\n		</SCRIPT>\n<BR style="HEIGHT: 1em; CLEAR: both">&nbsp; </DIV>\n<DIV id=clearFooter></DIV>\n<DIV id=footer>\n<UL id=footernav>\n<LI><A href="http://www.eclipse.org/">Home</A> \n<LI><A href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</A> \n<LI><A href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</A> \n<LI><A href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</A> \n<LI><A href="http://www.eclipse.org/legal/">Legal</A> \n<LI><A href="http://www.eclipse.org/org/foundation/contact.php">Contact Us</A> </LI></UL><SPAN id=copyright>Copyright © 2011 The Eclipse Foundation. All Rights Reserved.</SPAN> </DIV></DIV></BODY></HTML>]]></text>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.11">
+      <elements id="EclipseWindow6" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="649" y="309" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.12">
+      <elements id="View4" kind="View"/>
+      <controls xsi:type="com.xored.tesla.core.ui:View" className="org.eclipse.swt.widgets.Composite" enablement="true" title="Eclipse - The Eclipse Foundation open source community website.">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="3" y="26" width="770" height="457"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.13">
+      <elements id="Any2" kind="Any"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Control" className="org.eclipse.swt.widgets.Composite" enablement="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds width="770" height="457"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.15">
+      <elements id="EclipseWindow0_11" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="25" y="25" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+  </teslaContent>
+</com.xored.q7.scenario:Scenario>

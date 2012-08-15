@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xored.q7.scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.xored.q7.scenario="http://com/xored/q7/scenario.ecore" xmlns:com.xored.tesla.core.protocol="http:///com/xored/tesla/core/protocol.ecore" xmlns:com.xored.tesla.core.protocol.raw="http:///com/xored/tesla/core/protocol/raw.ecore" xmlns:com.xored.tesla.core.ui="http:///com/xored/tesla/core/ui.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="OpenURLInTwoTabs" version="3.0" id="_pl3iAc3_EeCw4ppgsBRMGg" type="ecl">
+  <contexts>_7c9isMx7EeCsOcWBSgorcQ</contexts>
+  <contexts>__yf_kMx7EeCsOcWBSgorcQ</contexts>
+  <teslaContent xsi:type="com.xored.tesla.core.protocol.raw:TeslaScenario">
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Menu" multiplicity="1">
+        <path>File</path>
+        <path>New Tab</path>
+        <parent id="EclipseWindow16" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:GetState"/>
+    <commands xsi:type="com.xored.tesla.core.protocol:Click">
+      <element id="Menu3" kind="Menu"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:WaitForState">
+      <state id="State7" kind="State"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="View" pattern="Eclipse - The Eclipse Foundation open source community website." index="1" multiplicity="1">
+        <parent id="EclipseWindow16" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Label" pattern="Address" multiplicity="1">
+        <parent id="View11" kind="View"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Text" multiplicity="1">
+        <after id="Label10" kind="Label"/>
+        <parent id="View11" kind="View"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SetText" value="http://eclipse.org/users">
+      <element id="Text10" kind="Text"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Type" state="0" code="13" character="13" meta="0">
+      <element id="Text10" kind="Text"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="TabFolder" multiplicity="1">
+        <parent id="EclipseWindow17" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="pages" value="Eclipse - The Eclipse Foundation open source community website." index="0">
+      <element id="TabFolder8" kind="TabFolder"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="pages" value="Getting Started with Eclipse" index="1">
+      <element id="TabFolder8" kind="TabFolder"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="tabCount" value="2">
+      <element id="TabFolder8" kind="TabFolder"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="View" pattern="Eclipse - The Eclipse Foundation open source community website." multiplicity="1">
+        <parent id="EclipseWindow18" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Click" withWait="false">
+      <element id="View13" kind="View"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Label" pattern="Address" multiplicity="1">
+        <parent id="View13" kind="View"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="Text" multiplicity="1">
+        <after id="Label12" kind="Label"/>
+        <parent id="View13" kind="View"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SetText" value="http://google.com">
+      <element id="Text12" kind="Text"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Type" state="0" code="13" character="13" meta="0">
+      <element id="Text12" kind="Text"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="EclipseWindow" multiplicity="1"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:SelectCommand">
+      <data kind="TabFolder" multiplicity="1">
+        <parent id="EclipseWindow19" kind="EclipseWindow" description="Browser Example"/>
+      </data>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="pages" value="Google" index="0">
+      <element id="TabFolder9" kind="TabFolder"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="pages" value="Getting Started with Eclipse" index="1">
+      <element id="TabFolder9" kind="TabFolder"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </commands>
+    <commands xsi:type="com.xored.tesla.core.protocol:Assert" attribute="tabCount" value="2">
+      <element id="TabFolder9" kind="TabFolder"/>
+      <valueType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </commands>
+    <elementMapping command="//@teslaContent/@commands.0">
+      <elements id="EclipseWindow16" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="803" y="199" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.1">
+      <elements id="Menu3" kind="Menu"/>
+      <controls xsi:type="com.xored.tesla.core.ui:MenuItem" caption="New &amp;Tab" enablement="true" index="1" cascade="true"/>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.2">
+      <elements id="State7" kind="State"/>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.5">
+      <elements id="View11" kind="View"/>
+      <controls xsi:type="com.xored.tesla.core.ui:View" className="org.eclipse.swt.widgets.Composite" enablement="true" title="Eclipse - The Eclipse Foundation open source community website.">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="3" y="26" width="770" height="457"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.6">
+      <elements id="Label10" kind="Label"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Label" className="org.eclipse.swt.widgets.Label" enablement="true" caption="A&amp;ddress">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="5" y="8" width="42" height="15"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.7">
+      <elements id="Text10" kind="Text"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Text" className="org.eclipse.swt.widgets.Text" enablement="true" borderWith="2" value="http://eclipse.org/">
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <bounds x="52" y="5" width="713" height="21"/>
+        <rawValue>http://eclipse.org/</rawValue>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.10">
+      <elements id="EclipseWindow17" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="803" y="199" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.11">
+      <elements id="TabFolder8" kind="TabFolder"/>
+      <controls xsi:type="com.xored.tesla.core.ui:TabFolder" activePage="Getting Started with Eclipse" tabCount="2">
+        <pages>Eclipse - The Eclipse Foundation open source community website.</pages>
+        <pages>Getting Started with Eclipse</pages>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.15">
+      <elements id="EclipseWindow18" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="803" y="199" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.16">
+      <elements id="View13" kind="View"/>
+      <controls xsi:type="com.xored.tesla.core.ui:View" className="org.eclipse.swt.widgets.Composite" enablement="true" title="Eclipse - The Eclipse Foundation open source community website.">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="3" y="26" width="770" height="457"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.18">
+      <elements id="Label12" kind="Label"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Label" className="org.eclipse.swt.widgets.Label" enablement="true" caption="A&amp;ddress">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="5" y="8" width="42" height="15"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.19">
+      <elements id="Text12" kind="Text"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Text" className="org.eclipse.swt.widgets.Text" enablement="true" borderWith="2" value="http://eclipse.org/">
+        <backgroundColor red="255" green="255" blue="255"/>
+        <foregroundColor/>
+        <bounds x="52" y="5" width="713" height="21"/>
+        <rawValue>http://eclipse.org/</rawValue>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.22">
+      <elements id="EclipseWindow19" kind="EclipseWindow"/>
+      <controls xsi:type="com.xored.tesla.core.ui:Window" className="org.eclipse.swt.widgets.Shell" enablement="true" borderWith="1" title="Browser Example" sizeable="true" hasMinimizeButton="true" hasMaximizeButton="true" hasCloseButton="true">
+        <backgroundColor red="240" green="240" blue="240"/>
+        <foregroundColor/>
+        <bounds x="803" y="199" width="800" height="600"/>
+      </controls>
+    </elementMapping>
+    <elementMapping command="//@teslaContent/@commands.23">
+      <elements id="TabFolder9" kind="TabFolder"/>
+      <controls xsi:type="com.xored.tesla.core.ui:TabFolder" activePage="Google" tabCount="2">
+        <pages>Google</pages>
+        <pages>Getting Started with Eclipse</pages>
+      </controls>
+    </elementMapping>
+  </teslaContent>
+</com.xored.q7.scenario:Scenario>

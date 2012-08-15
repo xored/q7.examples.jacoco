@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xored.q7.preferences:PreferencesContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.xored.q7.preferences="http:///com/xored/q7/preferences.ecore" name="defaultPreferences" id="__yf_kMx7EeCsOcWBSgorcQ" cleanPreferences="true">
+  <content name="bundle_defaults">
+    <childs name="org.eclipse.ui.examples.rcp.browser">
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="homePage" value="http://eclipse.org"/>
+    </childs>
+    <childs name="org.eclipse.ui">
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_TEXT_ON_PERSPECTIVE_BAR" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="VIEW_TAB_POSITION" value="128"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="USE_COLORED_LABELS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="USE_WINDOW_WORKING_SET_BY_DEFAULT" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_FILTERED_TEXTS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="initialFastViewBarLocation" value="bottom"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_SYSTEM_JOBS" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="KEY_CONFIGURATION_ID" value="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_TRADITIONAL_STYLE_TABS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHIFT_OPEN_NEW_PERSPECTIVE" value="OPEN_PERSPECTIVE_REPLACE"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_ANIMATIONS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ALTERNATE_OPEN_NEW_PERSPECTIVE" value="OPEN_PERSPECTIVE_REPLACE"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="VIEW_MINIMUM_CHARACTERS" value="1"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_OPEN_ON_PERSPECTIVE_BAR" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="DOCK_PERSPECTIVE_BAR" value="topLeft"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITOR_TAB_POSITION" value="128"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_32_STICKY_CLOSE_BEHAVIOR" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="presentationFactoryId" value="org.eclipse.ui.presentations.default"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="disableNewFastView" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="CLOSE_EDITORS_ON_EXIT" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_MULTIPLE_EDITOR_TABS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="LINK_NAVIGATOR_TO_EDITOR" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="OPEN_NEW_PERSPECTIVE" value="OPEN_PERSPECTIVE_REPLACE"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_OTHER_IN_PERSPECTIVE_MENU" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITOR_MINIMUM_CHARACTERS" value="-1"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="PROJECT_OPEN_NEW_PERSPECTIVE" value="OPEN_PERSPECTIVE_REPLACE"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="showIntro" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_MIN_MAX" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_DETACHED_VIEWS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="PROMPT_WHEN_SAVEABLE_STILL_OPEN" value="true"/>
+    </childs>
+    <childs name="org.eclipse.ui.workbench">
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="HeapStatus.updateInterval" value="500"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="DISABLE_OPEN_EDITOR_IN_PLACE" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="coolBarVisible" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITOR_TAB_WIDTH" value="3"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_NEW_MENUS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="REUSE_OPEN_EDITORS" value="8"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="OPEN_ON_SINGLE_CLICK" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SELECT_ON_HOVER" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITORLIST_PULLDOWN_ACTIVE" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="OPEN_AFTER_DELAY" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITORLIST_SORT_CRITERIA" value="0"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITORLIST_DISPLAY_FULL_NAME" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SINGLE_CLICK_METHOD" value="0"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_COOL_BARS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="OPEN_PERSPECTIVE_MODE" value="0"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="perspectiveBarVisible" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="MULTI_KEY_ASSIST_TIME" value="1000"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="USE_IPERSISTABLE_EDITORS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="OPEN_VIEW_MODE" value="0"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="REUSE_DIRTY_EDITORS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="MULTI_KEY_ASSIST" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="shouldPromptForEnablement" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="HeapStatus.showMax" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="REUSE_OPEN_EDITORS_BOOLEAN" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="overridepresentation" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="KEYS_PREFERENCE_SELECTED_TAB" value="0"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="EDITORLIST_SELECTION_SCOPE" value="1"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="FVB_HIDE" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="STICKY_CYCLE" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="DISABLE_DIALOG_FONT" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="RECENT_FILES" value="4"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLED_DECORATORS" value=""/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="ENABLE_CONFIGURABLE_PROJECT_WIZARD" value="false"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="COLOR_ICONS" value="true"/>
+      <data xsi:type="com.xored.q7.preferences:StringPrefData" key="SHOW_MEMORY_MONITOR" value="false"/>
+    </childs>
+  </content>
+</com.xored.q7.preferences:PreferencesContext>

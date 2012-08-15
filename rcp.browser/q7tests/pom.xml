@@ -1,0 +1,53 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.xored.q7.examples</groupId>
+  <artifactId>rcp.browser.tests</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>q7test</packaging>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>q7-releases</id>
+      <name>Xored Q7 Maven repository</name>
+      <url>http://maven.xored.com/nexus/content/repositories/q7-releases/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>q7-snapshots</id>
+      <name>Xored Q7 Snapshot  Maven repository</name>
+      <url>http://maven.xored.com/nexus/content/repositories/q7-snapshots/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <repositories>
+    <repository>
+      <id>eclipses</id>
+      <name>Eclipse packages in Nexus repository</name>
+      <url>http://maven.xored.com/nexus/content/repositories/thirdparty/</url>
+    </repository>
+  </repositories>
+
+  <properties>
+    <q7-maven-version>1.2.4</q7-maven-version>
+    <q7-runner-version>1.2.5-SNAPSHOT</q7-runner-version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.xored.q7</groupId>
+        <artifactId>q7-maven-plugin</artifactId>
+        <version>${q7-maven-version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <aut>
+            <explicit>${project.basedir}/../product/target/products/org.eclipse.ui.examples.rcp.browser.product-[classifier].zip</explicit>
+          </aut>
+          <q7>
+            <version>${q7-runner-version}</version>
+            <licenseFile>${project.basedir}/../q7.license</licenseFile>
+          </q7>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
