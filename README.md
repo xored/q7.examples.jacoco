@@ -14,10 +14,10 @@ To run the testing and coveraging you need [`mvn`][maven] on search path of your
     
 [maven]: http://maven.apache.org/
 
-How it works?
--------------
+All JaCoCo magic is done inside [`q7tests/pom.xml`][pom], lets learn it step by step.
 
-All JaCoCo magic is done in [`q7tests/pom.xml`][pom], lets learn it step by step.
+Collecting coverage data
+------------------------
 
 [pom]: https://github.com/xored/q7.examples.jacoco/blob/master/q7tests/pom.xml
 
@@ -59,3 +59,27 @@ That specifies where coverage data will be stored using `destFile` and yields `j
     </vmArgs>
 
 [q7-plugin]: http://help.xored.com/display/Q7/Q7+Maven+Plugin
+
+Generating coverage report
+--------------------------
+
+It is obvious to use JaCoCo Maven plugin [report goal][report-goal]:
+
+	<execution>
+		<id>report</id>
+		<phase>prepare-package</phase>
+		<configuration>
+			<dataFile>${project.basedir}/target/jacoco/data.exec</dataFile>
+			<outputDirectory>${project.basedir}/target/jacoco/report</outputDirectory>
+		</configuration>
+		<goals>
+			<goal>report</goal>
+		</goals>
+	</execution>
+
+Bad news, it will not work as you wish in most cases. The goal searches for source code at some predefined location relative to `project.basedir` and have no options to configure the report, that is not so much handy in everyday life. We will work around this, let the black magic starts.
+
+[report-goal]: http://www.eclemma.org/jacoco/trunk/doc/report-mojo.html
+
+The Ant magic
+-------------
