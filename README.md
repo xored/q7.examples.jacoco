@@ -52,7 +52,7 @@ Maven build must be somehow instructed to activate coverage data collection, tha
 		</executions>
     </plugin>
 
-That specifies where coverage data will be stored using `destFile` and yields `jacocoArgLine` property AKA variable using `propertyName`, which will be plugged into [Q7 Maven Plugin][q7-plugin]:
+`destFile` specifies where coverage data will be stored and `propertyName` yields `jacocoArgLine` property AKA variable using `propertyName`, which will be plugged into [Q7 Maven Plugin][q7-plugin]:
 
     <vmArgs>
         <vmArg>${jacocoArgLine}</vmArg>
