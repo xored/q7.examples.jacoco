@@ -21,7 +21,7 @@ Collecting coverage data
 
 [pom]: https://github.com/xored/q7.examples.jacoco/blob/master/q7tests/pom.xml
 
-[JaCoCo][jacoco] has the [Maven plugin][maven-plugin], to add it to our Maven build, we need a Maven plugin repository to fetch it from. Unfortunately, JaCoCo snapshots repository is broken at the time this text was written, August 2012, so we will fetch an outdated version from [The Central Repository][central-repo]:
+[JaCoCo][jacoco] has the [Maven plugin][maven-plugin], to add it to our Maven build, we need a Maven plugin repository to fetch it from. Unfortunately, JaCoCo snapshots repository is broken at the time this text was written, August 2012, so we will fetch an outdated version from the [The Central Repository][central-repo]:
 
     <pluginRepository>
         <id>central</id>
