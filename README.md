@@ -83,3 +83,83 @@ Bad news, it will not work as you wish in most cases. The goal searches for sour
 
 The Ant magic
 -------------
+
+Luckily enough, there are [JaCoCo Ant plugin][jacoco-ant] and [Maven AntRun plugin][maven-ant], using the second one we will be able to run Ant tasks from the first one:
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <dependencies>
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>org.jacoco.ant</artifactId>
+                <version>0.5.9.201207300726</version>
+            </dependency>
+            <dependency>
+                <groupId>ant-contrib</groupId>
+                <artifactId>ant-contrib</artifactId>
+                <version>20020829</version>
+            </dependency>
+        </dependencies>
+        <executions>
+            <execution>
+                <id>jacoco-report</id>
+                <phase>prepare-package</phase>
+                <goals>
+                    <goal>run</goal>
+                </goals>
+                <configuration>
+                    <target>
+                        <property name="source-location" location="../org.eclipse.ui.examples.rcp.browser"/>
+                        <taskdef name="jacoco-report" classname="org.jacoco.ant.ReportTask" classpathref="maven.plugin.classpath" />
+                        <taskdef classpathref="maven.runtime.classpath" resource="net/sf/antcontrib/antcontrib.properties" />
+                        <jacoco-report>
+                            <executiondata>
+                                <file file="${project.basedir}/target/jacoco/data.exec" />
+                            </executiondata>
+
+                            <structure name="org.eclipse.ui.examples.rcp.browser">
+                                <classfiles>
+                                    <fileset dir="${source-location}/target/browser.jar-classes" />
+                                </classfiles>
+                                <sourcefiles>
+                                    <fileset dir="${source-location}/src" />
+                                </sourcefiles>
+                            </structure>
+                            <html destdir="${project.basedir}/target/jacoco/report" />
+                            <xml destfile="${project.basedir}/target/jacoco/report/jacoco.xml"/>
+                        </jacoco-report>
+                    </target>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+
+Bingo! That way we may freely setup the report to include classes we wish using `structure` and its `classfiles` and `sourcefiles`. Even more, if you interested in coverage report for diferent areas of your code, you may setup `group`s:
+
+	<structure name="Product Title">
+	    <group name="Networking">
+	        <classfiles>
+	            <fileset dir="${source-location}/networking/bin" />
+	        </classfiles>
+	        <sourcefiles>
+	            <fileset dir="${source-location}/networking/src" />
+	        </sourcefiles>
+	    </group>    
+	    <group name="Rendering">
+	        <classfiles>
+	            <fileset dir="${source-location}/rendering/bin" />
+	        </classfiles>
+	        <sourcefiles>
+	            <fileset dir="${source-location}/rendering/src" />
+	        </sourcefiles>
+	    </group>    
+	</structure>
+
+That's all. Thanks to [David Carver][david] for great "[Jacoco, Tycho, and Coverage Reports][article]" article.
+
+[jacoco-ant]: http://www.eclemma.org/jacoco/trunk/doc/ant.html
+[maven-ant]: http://maven.apache.org/plugins/maven-antrun-plugin/
+[david]: http://intellectualcramps.wordpress.com/about/
+[article]: http://intellectualcramps.wordpress.com/2012/03/22/jacoco-tycho-and-coverage-reports/
