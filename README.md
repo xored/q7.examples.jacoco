@@ -63,7 +63,7 @@ That specifies where coverage data will be stored using `destFile` and yields `j
 Generating coverage report
 --------------------------
 
-It is obvious to use JaCoCo Maven plugin [report goal][report-goal]:
+It is obvious to use [report goal][report-goal] from JaCoCo Maven plugin:
 
 	<execution>
 		<id>report</id>
