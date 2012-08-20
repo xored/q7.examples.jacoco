@@ -157,7 +157,7 @@ Bingo! That way we may freely setup the report to include classes we wish using 
 	    </group>    
 	</structure>
 
-That's all. Thanks to [David Carver][david] for great "[Jacoco, Tycho, and Coverage Reports][article]" article.
+That's all. Thanks to [David Carver][david] for his great "[Jacoco, Tycho, and Coverage Reports][article]" article.
 
 [jacoco-ant]: http://www.eclemma.org/jacoco/trunk/doc/ant.html
 [maven-ant]: http://maven.apache.org/plugins/maven-antrun-plugin/
