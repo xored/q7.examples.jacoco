@@ -1,53 +1,140 @@
 <project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.xored.q7.examples</groupId>
-  <artifactId>rcp.browser.tests</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>q7test</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.xored.q7.examples</groupId>
+    <artifactId>rcp.browser.tests</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>q7test</packaging>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>q7-releases</id>
-      <name>Xored Q7 Maven repository</name>
-      <url>http://maven.xored.com/nexus/content/repositories/q7-releases/</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>q7-snapshots</id>
-      <name>Xored Q7 Snapshot  Maven repository</name>
-      <url>http://maven.xored.com/nexus/content/repositories/q7-snapshots/</url>
-    </pluginRepository>
-  </pluginRepositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>q7-releases</id>
+            <name>Xored Q7 Maven repository</name>
+            <url>http://maven.xored.com/nexus/content/repositories/q7-releases/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>q7-snapshots</id>
+            <name>Xored Q7 Snapshot  Maven repository</name>
+            <url>http://maven.xored.com/nexus/content/repositories/q7-snapshots/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
-  <repositories>
-    <repository>
-      <id>eclipses</id>
-      <name>Eclipse packages in Nexus repository</name>
-      <url>http://maven.xored.com/nexus/content/repositories/thirdparty/</url>
-    </repository>
-  </repositories>
+    <repositories>
+        <repository>
+            <id>eclipses</id>
+            <name>Eclipse packages in Nexus repository</name>
+            <url>http://maven.xored.com/nexus/content/repositories/thirdparty/</url>
+        </repository>
+    </repositories>
 
-  <properties>
-    <q7-maven-version>1.2.4</q7-maven-version>
-    <q7-runner-version>1.2.5-SNAPSHOT</q7-runner-version>
-  </properties>
+    <properties>
+        <q7-maven-version>1.2.4</q7-maven-version>
+        <q7-runner-version>1.2.5-SNAPSHOT</q7-runner-version>
+    </properties>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.xored.q7</groupId>
-        <artifactId>q7-maven-plugin</artifactId>
-        <version>${q7-maven-version}</version>
-        <extensions>true</extensions>
-        <configuration>
-          <aut>
-            <explicit>${project.basedir}/../product/target/products/org.eclipse.ui.examples.rcp.browser.product-[classifier].zip</explicit>
-          </aut>
-          <q7>
-            <version>${q7-runner-version}</version>
-            <licenseFile>${project.basedir}/../q7.license</licenseFile>
-          </q7>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.5.9.201207300726</version>
+				<executions>
+					<execution>
+                        <configuration>
+                            <destFile>${project.basedir}/target/jacoco/data.exec</destFile>
+                            <propertyName>jacocoArgLine</propertyName>
+                        </configuration>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+
+					<!-- Do not work, we must use the Ant plugin. -->
+					<!--execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+                        <configuration>
+                            <dataFile>${project.basedir}/target/jacoco/data.exec</dataFile>
+                            <outputDirectory>${project.basedir}/target/jacoco/report</outputDirectory>
+                        </configuration>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution-->
+
+				</executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>org.jacoco.ant</artifactId>
+                        <version>0.5.9.201207300726</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>ant-contrib</groupId>
+                        <artifactId>ant-contrib</artifactId>
+                        <version>20020829</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>jacoco-report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <property name="source-location" location="../org.eclipse.ui.examples.rcp.browser"/>
+                                <taskdef name="jacoco-report" classname="org.jacoco.ant.ReportTask" classpathref="maven.plugin.classpath" />
+                                <taskdef classpathref="maven.runtime.classpath" resource="net/sf/antcontrib/antcontrib.properties" />
+                                <jacoco-report>
+                                    <executiondata>
+                                        <file file="${project.basedir}/target/jacoco/data.exec" />
+                                    </executiondata>
+
+                                    <structure name="org.eclipse.ui.examples.rcp.browser">
+                                        <classfiles>
+                                            <fileset dir="${source-location}/target/browser.jar-classes" />
+                                        </classfiles>
+                                        <sourcefiles>
+                                            <fileset dir="${source-location}/src" />
+                                        </sourcefiles>
+                                    </structure>
+                                    <html destdir="${project.basedir}/target/jacoco/report" />
+                                    <xml destfile="${project.basedir}/target/jacoco/report/jacoco.xml"/>
+                                </jacoco-report>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.xored.q7</groupId>
+                <artifactId>q7-maven-plugin</artifactId>
+                <version>${q7-maven-version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <aut>
+                        <explicit>${project.basedir}/../product/target/products/org.eclipse.ui.examples.rcp.browser.product-[classifier].zip</explicit>
+                        <vmArgs>
+                            <vmArg>${jacocoArgLine}</vmArg>
+                        </vmArgs>
+                    </aut>
+                    <q7>
+                        <version>${q7-runner-version}</version>
+                        <licenseFile>${project.basedir}/../q7.license</licenseFile>
+                    </q7>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
