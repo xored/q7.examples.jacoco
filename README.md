@@ -77,7 +77,7 @@ It is obvious to use [report goal][report-goal] from JaCoCo Maven plugin:
 		</goals>
 	</execution>
 
-Bad news, it will not work as you wish in most cases. The goal searches for source code at some predefined location relative to `project.basedir` and have no options to configure the report, that is not so much handy in everyday life. We will work around this, let the black magic starts.
+Bad news, it will not work as you wish in most cases. The goal searches for source code at some predefined location relative to `project.basedir` and has no options to configure the report, that is not so much handy in everyday life. We will work around this, let the black magic starts.
 
 [report-goal]: http://www.eclemma.org/jacoco/trunk/doc/report-mojo.html
 
